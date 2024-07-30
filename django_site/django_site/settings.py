@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-=@uv4$yy!1+&7&+bi$z8p%pbw2)-+qda)x)*v!mslrg69v&zl%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -119,11 +120,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+
+TIME_ZONE = 'Asia/Kolkata'   # Or your specific time zone, e.g., 'Asia/Kolkata'
+USE_TZ = True
+
 
 USE_I18N = True
 
-USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -139,5 +143,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Default primary key field type
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SESSION_COOKIE_DOMAIN = None
+CSRF_COOKIE_SECURE = False
+CSRF_TRUSTED_ORIGINS = ['https://*.ngrok-free.app']
